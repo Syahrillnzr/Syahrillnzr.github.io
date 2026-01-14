@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snackbysyahrill - Project</title>
+    <link rel="stylesheet" href="assets/css/project-style.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header id="header">
+        <nav class="top-nav">
+            <a href="index-notfinisded.html" class="logo">Home</a>
+            <ul>
+                <li><a href="index-notfinisded.html">About</a></li>
+                <li><a href="index-notfinisded.html#skill">Skills</a></li>
+                <li><a href="index-notfinisded.html#work">Work</a></li>
+                <li><a href="index-notfinisded.html#project">Projects</a></li>
+                <li><a href="index-notfinisded.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Hero -->
+    <section id="project-hero">
+        <h1 id="hero-title">Project Title</h1>
+        <p id="hero-subtitle">Project Subtitle / Short Description</p>
+    </section>
+
+    <!-- Project Content -->
+    <section id="project-content">
+        <p id="project-desc-1">Project description paragraph 1</p>
+        <p id="project-desc-2">Project description paragraph 2</p>
+
+        <!-- Highlights / Skills Used -->
+        <div class="project-highlights" id="project-highlights">
+            <!-- Dynamic highlight cards injected via JS -->
+        </div>
+
+        <!-- Live Demo -->
+        <div class="actions">
+            <a id="live-demo-btn" href="#" class="button" target="_blank">View Live Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 - <span id="currentYear"></span> Syahrill Norizan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Update footer year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Dynamic project content
+        const projects = {
+            snackbysyahrill: {
+                title: "snackbysyahrill",
+                subtitle: "Entrepreneurship project during university",
+                desc: [
+                    "This website was created as part of my journey into entrepreneurship, inspired by what I learned during my entrepreneurship studies at university. Through the course, I gained a strong foundation in business strategy, innovation, and problem-solving, which motivated me to turn ideas into practical digital solutions.",
+                    "After completing the entrepreneurship subject, I realized the importance of building something meaningful that delivers value to others. This website was developed to experiment, learn, and grow as an entrepreneur—combining creativity, technology, and business principles."
+                ],
+                highlights: [
+                    {title: "Technologies Used", text: "HTML, CSS, JavaScript"},
+                    {title: "Skills Applied", text: "Web Development, UX Design, Entrepreneurship"},
+                    {title: "Project Goal", text: "Showcase ideas & practical application of entrepreneurship knowledge"}
+                ],
+                demo: "snackbysyahrill.html",
+                heroImage: "images/pic04.jpg"
+            },
+            ecourier: {
+                title: "snackbysyahrill",
+                subtitle: "Entrepreneurship project during university",
+                desc: [
+                    "This website was created as part of my journey into entrepreneurship, inspired by what I learned during my entrepreneurship studies at university. Through the course, I gained a strong foundation in business strategy, innovation, and problem-solving, which motivated me to turn ideas into practical digital solutions.",
+                    "After completing the entrepreneurship subject, I realized the importance of building something meaningful that delivers value to others. This website was developed to experiment, learn, and grow as an entrepreneur—combining creativity, technology, and business principles."
+                ],
+                highlights: [
+                    {title: "Technologies Used", text: "HTML, CSS, JavaScript"},
+                    {title: "Skills Applied", text: "Web Development, UX Design, Entrepreneurship"},
+                    {title: "Project Goal", text: "Showcase ideas & practical application of entrepreneurship knowledge"}
+                ],
+                demo: "snackbysyahrill.html",
+                heroImage: "images/pic04.jpg"
+            },
+            spbAio: {
+                title: "SPB AIO SYSTEM",
+                subtitle: "Sektor Pembelajaran All In One project",
+                desc: [
+                    "A proposal website developed for my internship at Jabatan Pendidikan Perlis, demonstrating a practical learning management system.",
+                    "Includes interactive content management, live streaming, and web-based tracking features for educational purposes."
+                ],
+                highlights: [
+                    {title: "Technologies Used", text: "HTML, CSS, PHP"},
+                    {title: "Skills Applied", text: "Web Development, Proposal Design, IT Support"},
+                    {title: "Project Goal", text: "Provide a All in One System for staff"}
+                ],
+                demo: "demoweb2.html",
+                heroImage: "images/pic05.jpg"
+            },
+            syahhrillwedding: {
+                title: "Syahrill Wedding",
+                subtitle: "wedding",
+                desc: [
+                    "A proposaship at Jabatan Pendidikan Perlis, demonstrating a practical learning management system.",
+                    "Includes interac, anatures for educational purposes."
+                ],
+                highlights: [
+                    {title: "Technologies Used", text: "HTML, CSS, PHP"},
+                    {title: "Skills Applied", text: "Web Development, Proposal Design, IT Support"},
+                    {title: "Project Goal", text: "Provide a All in One System for staff"}
+                ],
+                demo: "demoweb2.html",
+                heroImage: "images/pic05.jpg"
+            }
+            // Add more projects here...
+        };
+
+        // Determine which project to load
+        const params = new URLSearchParams(window.location.search);
+        const projectKey = params.get('project') || 'snackbysyahrill';
+        const project = projects[projectKey];
+
+        // Inject hero content
+        document.getElementById('hero-title').textContent = project.title;
+        document.getElementById('hero-subtitle').textContent = project.subtitle;
+        document.getElementById('live-demo-btn').href = project.demo;
+        document.getElementById('project-hero').style.backgroundImage =
+            `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${project.heroImage}')`;
+
+        // Populate project description
+        const projectContent = document.getElementById('project-content');
+        projectContent.querySelectorAll('p').forEach(p => {
+            if (!p.closest('.project-highlights')) p.remove(); // remove old desc only
+        });
+
+        project.desc.forEach(text => {
+            const p = document.createElement('p');
+            p.textContent = text;
+            projectContent.insertBefore(p, document.getElementById('project-highlights'));
+        });
+
+        // Populate highlight cards
+        const highlightsContainer = document.getElementById('project-highlights');
+        highlightsContainer.innerHTML = ''; // clear old highlights
+        project.highlights.forEach(h => {
+            const div = document.createElement('div');
+            div.classList.add('highlight-card');
+            div.innerHTML = `<h4>${h.title}</h4><p>${h.text}</p>`;
+            highlightsContainer.appendChild(div);
+        });
+
+    </script>
+</body>
+</html>
