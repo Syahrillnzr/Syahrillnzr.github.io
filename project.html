@@ -36,7 +36,7 @@
 
         <!-- Project Images -->
         <div class="project-image-container" id="project-images"></div>
-
+        <br>
         <!-- Highlights / Skills Used -->
         <div class="project-highlights" id="project-highlights"></div>
 
@@ -77,7 +77,7 @@
                     {title: "Project Goal", text: "Showcase ideas & practical application of entrepreneurship knowledge"}
                 ],
                 demo: "snackbysyahrill.html",
-                heroImage: "images/pic04.jpg"
+                heroImage: "assets/images/project/snack3.jpeg"
             },
             ecourier: {
                 title: "snackbysyahrill",
@@ -97,7 +97,7 @@
                     {title: "Project Goal", text: "Showcase ideas & practical application of entrepreneurship knowledge"}
                 ],
                 demo: "snackbysyahrill.html",
-                heroImage: "images/pic04.jpg"
+                heroImage: "assets/images/project/snack1.jpeg"
             },
             spbAio: {
                 title: "SPB AIO SYSTEM",
@@ -117,7 +117,7 @@
                     {title: "Project Goal", text: "Provide a All in One System for staff"}
                 ],
                 demo: "demoweb2.html",
-                heroImage: "images/pic05.jpg"
+                heroImage: "assets/images/project/snack2.jpeg"
             },
             syahhrillwedding: {
                 title: "Syahrill Wedding",
@@ -170,15 +170,6 @@
         descContainer.appendChild(p);
     });
 
-    // 2️⃣ Inject images BELOW description
-    const imagesContainer = document.getElementById('project-images');
-    project.images.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = project.title;
-        img.classList.add('project-img'); // for styling
-        imagesContainer.appendChild(img);
-    });
 
     // 3️⃣ Inject highlight cards
     const highlightsContainer = document.getElementById('project-highlights');
@@ -188,6 +179,67 @@
         div.innerHTML = `<h4>${h.title}</h4><p>${h.text}</p>`;
         highlightsContainer.appendChild(div);
     });
+
+    let current = 0;
+    let slides = [];
+    let dots = [];
+    let sliderInterval = null;
+
+    function renderProjectSlider(projectKey) {
+    const project = projects[projectKey];
+    if (!project) return;
+
+    const container = document.getElementById("project-images");
+
+    container.innerHTML = `
+        <div class="slider">
+        ${project.images.map((img, i) => `
+            <div class="slide" style="display:${i === 0 ? 'block' : 'none'}">
+            <img src="${img}">
+            </div>
+        `).join('')}
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+
+        <div class="dots">
+        ${project.images.map((_, i) => `
+            <span class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></span>
+        `).join('')}
+        </div>
+    `;
+
+    slides = container.querySelectorAll(".slide");
+    dots = container.querySelectorAll(".dot");
+    current = 0;
+
+    startAutoSlide();
+    }
+
+    function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? "block" : "none";
+        dots[i].classList.toggle("active", i === index);
+    });
+    }
+
+    function changeSlide(step) {
+    current = (current + step + slides.length) % slides.length;
+    showSlide(current);
+    }
+
+    function goToSlide(index) {
+    current = index;
+    showSlide(current);
+    }
+
+    function startAutoSlide() {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => changeSlide(1), 4000);
+    }
+
+    renderProjectSlider(projectKey);
 
     </script>
 </body>

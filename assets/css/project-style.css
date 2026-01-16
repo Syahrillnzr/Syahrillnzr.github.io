@@ -69,25 +69,59 @@
 
 /* Project Image */
 .project-image-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* space between images */
-    margin: 20px 0;
-    justify-content: center; /* center images */
+  max-width: 900px;
+  margin: auto;
 }
 
-.project-image-container img.project-img {
-    max-width: 300px; /* adjust size */
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  background: #000;
 }
 
-.project-image-container img.project-img:hover {
-    transform: scale(1.05);
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
 }
 
+.slide.hidden {
+  display: none;
+}
 
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .prev,
+.slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.slider .prev {
+  left: 15px;
+}
+
+.slider .next {
+  right: 15px;
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+  background: rgba(0,0,0,0.9);
+}
 
