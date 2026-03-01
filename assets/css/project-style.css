@@ -1,68 +1,148 @@
  /* Project page specific styles */
-        #project-hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/pic04.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 100px 20px;
-            text-align: center;
-        }
 
-        #project-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+.dev-banner {
+    width: 100%;
+    background: #fff3cd;
+    color: #856404;
+    border-bottom: 1px solid #ffc107;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
 
-        #project-content {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
+#project-hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/pic04.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
 
-        #project-content p {
-            display: block;
-            color: #333;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
+#project-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
 
 
-        .project-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
 
-        .highlight-card {
-            background: #f8f8f8;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            flex: 1 1 200px;
-            text-align: center;
-        }
+#project-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
 
-        .highlight-card h4 {
-            margin-bottom: 10px;
-            color: #4b6cb7; /* modern accent color */
-        }
+#project-content p {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
 
-        .actions {
-            text-align: center;
-            margin-bottom: 50px;
-        }
 
-        .actions .button {
-            background-color: #4b6cb7;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+.project-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
 
-        .actions .button:hover {
-            background-color: #32408f;
-        }
+.highlight-card {
+    background: #f8f8f8;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.highlight-card h4 {
+    margin-bottom: 10px;
+    color: #4b6cb7; /* modern accent color */
+}
+
+.actions {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.actions .button {
+    background-color: #4b6cb7;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.actions .button:hover {
+    background-color: #32408f;
+}
+
+/* Project Image */
+.project-image-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  background: #000;
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide.hidden {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .prev,
+.slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.slider .prev {
+  left: 15px;
+}
+
+.slider .next {
+  right: 15px;
+}
+
+.slider .prev:hover,
+.slider .next:hover {
+  background: rgba(0,0,0,0.9);
+}
+

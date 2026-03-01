@@ -9,6 +9,13 @@
 </head>
 <body>
 
+    <!-- Dev Banner -->
+    <div class="dev-banner">
+        <i class="fas fa-triangle-exclamation"></i>
+        This portfolio is currently under development — some sections may be incomplete.
+        <i class="fas fa-triangle-exclamation"></i>
+    </div>
+
     <!-- Top Navigation -->
     <header id="header">
         <nav class="top-nav">
@@ -31,19 +38,23 @@
 
     <!-- Project Content -->
     <section id="project-content">
-        <p id="project-desc-1">Project description paragraph 1</p>
-        <p id="project-desc-2">Project description paragraph 2</p>
+        <!-- Description -->
+        <div id="project-desc-container"></div>
 
+        <!-- Project Images -->
+        <div class="project-image-container" id="project-images"></div>
+        <br>
         <!-- Highlights / Skills Used -->
-        <div class="project-highlights" id="project-highlights">
-            <!-- Dynamic highlight cards injected via JS -->
-        </div>
+        <div class="project-highlights" id="project-highlights"></div>
 
         <!-- Live Demo -->
         <div class="actions">
             <a id="live-demo-btn" href="#" class="button" target="_blank">View Live Demo</a>
+            <a id="live-code-btn" href="#" class="button" target="_blank">View code</a>
         </div>
+        
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -64,20 +75,10 @@
                     "This website was created as part of my journey into entrepreneurship, inspired by what I learned during my entrepreneurship studies at university. Through the course, I gained a strong foundation in business strategy, innovation, and problem-solving, which motivated me to turn ideas into practical digital solutions.",
                     "After completing the entrepreneurship subject, I realized the importance of building something meaningful that delivers value to others. This website was developed to experiment, learn, and grow as an entrepreneur—combining creativity, technology, and business principles."
                 ],
-                highlights: [
-                    {title: "Technologies Used", text: "HTML, CSS, JavaScript"},
-                    {title: "Skills Applied", text: "Web Development, UX Design, Entrepreneurship"},
-                    {title: "Project Goal", text: "Showcase ideas & practical application of entrepreneurship knowledge"}
-                ],
-                demo: "snackbysyahrill.html",
-                heroImage: "images/pic04.jpg"
-            },
-            ecourier: {
-                title: "snackbysyahrill",
-                subtitle: "Entrepreneurship project during university",
-                desc: [
-                    "This website was created as part of my journey into entrepreneurship, inspired by what I learned during my entrepreneurship studies at university. Through the course, I gained a strong foundation in business strategy, innovation, and problem-solving, which motivated me to turn ideas into practical digital solutions.",
-                    "After completing the entrepreneurship subject, I realized the importance of building something meaningful that delivers value to others. This website was developed to experiment, learn, and grow as an entrepreneur—combining creativity, technology, and business principles."
+                images: [
+                    "https://placehold.co/800x500/f5ebe0/c8612a?text=snackbysyahrill+Screenshot+1",
+                    "https://placehold.co/800x500/f3ecf9/9b7fc0?text=snackbysyahrill+Screenshot+2",
+                    "https://placehold.co/800x500/e8f5e9/6a8f72?text=snackbysyahrill+Screenshot+3"
                 ],
                 highlights: [
                     {title: "Technologies Used", text: "HTML, CSS, JavaScript"},
@@ -85,7 +86,9 @@
                     {title: "Project Goal", text: "Showcase ideas & practical application of entrepreneurship knowledge"}
                 ],
                 demo: "snackbysyahrill.html",
-                heroImage: "images/pic04.jpg"
+                code: "snackbysyahrill.html",
+                locked: true, // false if the project been deployed
+                heroImage: "https://placehold.co/1200x600/fdf1e7/c8612a?"
             },
             spbAio: {
                 title: "SPB AIO SYSTEM",
@@ -94,65 +97,179 @@
                     "A proposal website developed for my internship at Jabatan Pendidikan Perlis, demonstrating a practical learning management system.",
                     "Includes interactive content management, live streaming, and web-based tracking features for educational purposes."
                 ],
+                 images: [
+                    "https://placehold.co/800x500/f5ebe0/c8612a?text=SPB+AIO+Screenshot+1",
+                    "https://placehold.co/800x500/f3ecf9/9b7fc0?text=SPB+AIO+Screenshot+2",
+                    "https://placehold.co/800x500/e8f5e9/6a8f72?text=SPB+AIO+Screenshot+3"
+                ],
                 highlights: [
                     {title: "Technologies Used", text: "HTML, CSS, PHP"},
                     {title: "Skills Applied", text: "Web Development, Proposal Design, IT Support"},
                     {title: "Project Goal", text: "Provide a All in One System for staff"}
                 ],
-                demo: "demoweb2.html",
-                heroImage: "images/pic05.jpg"
+                demo: "snackbysyahrill.html",
+                code: "snackbysyahrill.html",
+                locked: true, // false if the project been deployed
+                heroImage: "https://placehold.co/1200x600/fdf1e7/c8612a?"
             },
             syahhrillwedding: {
                 title: "Syahrill Wedding",
-                subtitle: "wedding",
+                subtitle: ["wedding"],
                 desc: [
                     "A proposaship at Jabatan Pendidikan Perlis, demonstrating a practical learning management system.",
                     "Includes interac, anatures for educational purposes."
                 ],
+                 images: [
+                    "https://placehold.co/800x500/f5ebe0/c8612a?text=Syahrill+Wedding+Screenshot+1",
+                    "https://placehold.co/800x500/f3ecf9/9b7fc0?text=Syahrill+Wedding+Screenshot+2",
+                    "https://placehold.co/800x500/e8f5e9/6a8f72?text=Syahrill+Wedding+Screenshot+3"
+                ],
                 highlights: [
                     {title: "Technologies Used", text: "HTML, CSS, PHP"},
                     {title: "Skills Applied", text: "Web Development, Proposal Design, IT Support"},
                     {title: "Project Goal", text: "Provide a All in One System for staff"}
                 ],
-                demo: "demoweb2.html",
-                heroImage: "images/pic05.jpg"
-            }
+                demo: "snackbysyahrill.html",
+                code: "snackbysyahrill.html",
+                locked: true, // false if the project been deployed
+                heroImage: "https://placehold.co/1200x600/fdf1e7/c8612a?"
+            },
+            moodjournal: {
+                title: "Mood Journal",
+                subtitle: ["Journal", "Tracker", "Mood", "Wellness", "Reflection"],
+                desc: [
+                    "A full-stack mood journal web app for tracking daily emotions, reflecting on mental wellness, and building self-awareness over time.",
+                    "Features an admin dashboard with user management and analytics, alongside a personal user dashboard with mood history, visual charts, and reflective journal entries."
+                     ],
+                 images: [
+                    "https://placehold.co/800x500/f5ebe0/c8612a?text=Mood+Journal+Screenshot+1",
+                    "https://placehold.co/800x500/f3ecf9/9b7fc0?text=Mood+Journal+Screenshot+2",
+                    "https://placehold.co/800x500/e8f5e9/6a8f72?text=Mood+Journal+Screenshot+3"
+                ],
+                highlights: [
+                    {title: "Technologies Used", text: "Laravel, Tailwind CSS, PHP, ChartJs"},
+                    {title: "Skills Applied", text: "Web Development, UI/UX Design, Data Visualization"},
+                    {title: "Project Goal", text: "Help users track daily moods and reflect on their emotional well-being"}
+                ],
+                demo: "snackbysyahrill.html",
+                code: "snackbysyahrill.html",
+                locked: true, // false if the project been deployed
+                heroImage: "https://placehold.co/1200x600/fdf1e7/c8612a?"
+            },
             // Add more projects here...
         };
 
-        // Determine which project to load
-        const params = new URLSearchParams(window.location.search);
-        const projectKey = params.get('project') || 'snackbysyahrill';
-        const project = projects[projectKey];
 
-        // Inject hero content
-        document.getElementById('hero-title').textContent = project.title;
-        document.getElementById('hero-subtitle').textContent = project.subtitle;
-        document.getElementById('live-demo-btn').href = project.demo;
-        document.getElementById('project-hero').style.backgroundImage =
-            `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${project.heroImage}')`;
+    // Determine which project to load
+    const params = new URLSearchParams(window.location.search);
+    const projectKey = params.get('project') || 'snackbysyahrill';
+    const project = projects[projectKey];
 
-        // Populate project description
-        const projectContent = document.getElementById('project-content');
-        projectContent.querySelectorAll('p').forEach(p => {
-            if (!p.closest('.project-highlights')) p.remove(); // remove old desc only
-        });
+    // Inject hero content
+    document.getElementById('hero-title').textContent = project.title;
+    document.getElementById('hero-subtitle').textContent = project.subtitle;
+    document.getElementById('live-demo-btn').href = project.demo;
+    document.getElementById('live-code-btn').href = project.code;
+    document.getElementById('project-hero').style.backgroundImage =
+        `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${project.heroImage}')`;
 
-        project.desc.forEach(text => {
-            const p = document.createElement('p');
-            p.textContent = text;
-            projectContent.insertBefore(p, document.getElementById('project-highlights'));
-        });
+    const projectContent = document.getElementById('project-content');
 
-        // Populate highlight cards
-        const highlightsContainer = document.getElementById('project-highlights');
-        highlightsContainer.innerHTML = ''; // clear old highlights
-        project.highlights.forEach(h => {
-            const div = document.createElement('div');
-            div.classList.add('highlight-card');
-            div.innerHTML = `<h4>${h.title}</h4><p>${h.text}</p>`;
-            highlightsContainer.appendChild(div);
-        });
+    // Handle locked demo
+        const demoBtn = document.getElementById('live-demo-btn');
+        if (project.locked) {
+            demoBtn.innerHTML = `<i class="fa-solid fa-lock"></i> Demo Locked`;
+            demoBtn.removeAttribute('href');
+            demoBtn.style.pointerEvents = "none";
+            demoBtn.style.opacity = "0.5";
+            demoBtn.style.cursor = "not-allowed";
+        } else {
+            demoBtn.href = project.demo;
+        }
+
+    // Clear old content
+    document.getElementById('project-desc-container').innerHTML = '';
+    document.getElementById('project-images').innerHTML = '';
+    document.getElementById('project-highlights').innerHTML = '';
+
+    // 1️⃣ Inject description
+    const descContainer = document.getElementById('project-desc-container');
+    project.desc.forEach(text => {
+        const p = document.createElement('p');
+        p.textContent = text;
+        descContainer.appendChild(p);
+    });
+
+
+    // 3️⃣ Inject highlight cards
+    const highlightsContainer = document.getElementById('project-highlights');
+    project.highlights.forEach(h => {
+        const div = document.createElement('div');
+        div.classList.add('highlight-card');
+        div.innerHTML = `<h4>${h.title}</h4><p>${h.text}</p>`;
+        highlightsContainer.appendChild(div);
+    });
+
+    let current = 0;
+    let slides = [];
+    let dots = [];
+    let sliderInterval = null;
+
+    function renderProjectSlider(projectKey) {
+    const project = projects[projectKey];
+    if (!project) return;
+
+    const container = document.getElementById("project-images");
+
+    container.innerHTML = `
+        <div class="slider">
+        ${project.images.map((img, i) => `
+            <div class="slide" style="display:${i === 0 ? 'block' : 'none'}">
+            <img src="${img}">
+            </div>
+        `).join('')}
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+
+        <div class="dots">
+        ${project.images.map((_, i) => `
+            <span class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></span>
+        `).join('')}
+        </div>
+    `;
+
+    slides = container.querySelectorAll(".slide");
+    dots = container.querySelectorAll(".dot");
+    current = 0;
+
+    startAutoSlide();
+    }
+
+    function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? "block" : "none";
+        dots[i].classList.toggle("active", i === index);
+    });
+    }
+
+    function changeSlide(step) {
+    current = (current + step + slides.length) % slides.length;
+    showSlide(current);
+    }
+
+    function goToSlide(index) {
+    current = index;
+    showSlide(current);
+    }
+
+    function startAutoSlide() {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => changeSlide(1), 4000);
+    }
+
+    renderProjectSlider(projectKey);
 
     </script>
 </body>
