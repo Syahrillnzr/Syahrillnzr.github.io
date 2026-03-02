@@ -146,3 +146,46 @@
   background: rgba(0,0,0,0.9);
 }
 
+/* ── MOBILE MENU HIDE ── */
+@media (max-width: 768px) {
+    /* This hides the navigation list on tablets and phones */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* Adjusts the Project Hero text size for smaller screens */
+    #project-hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Makes the highlight cards stack 1-by-1 */
+    .project-highlights {
+        flex-direction: column;
+    }
+}
+
+/* ── DEV BANNER ── */
+.dev-banner {
+    width: 100%;
+    background: #fff3cd;
+    color: #856404;
+    border-bottom: 1px solid #ffc107;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* NOT sticky/fixed — just normal flow inside header */
+    position: relative;
+    z-index: 1000;
+}
+
+    .dev-banner {
+        font-size: 12px;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
